@@ -14,4 +14,4 @@
     ignore_errors: yes
 
   - name: create container using simple image
-    command: docker run -d --name my-container -p 8085:8080 python-flask-api
+    command: docker run -d --name my-container -p 8085:8080 python-flask-api:{{tag}}
