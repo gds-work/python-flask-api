@@ -20,6 +20,6 @@
   - name: build docker image using war
     command: docker build -t python-flask-api .
     args:
-      chdir: /opt/docker
+      chdir: /home/labuser/Desktop/python-flask-api
   - name: create container using simple image
     command: docker run -d --name my-container -p 8085:8080 python-flask-api
