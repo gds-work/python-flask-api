@@ -13,5 +13,13 @@
     command: docker rm my-container
     ignore_errors: yes
 
+  - name: remove docker image
+    command: docker rmi python-flask-api
+    ignore_errors: yes
+
+  - name: build docker image using war
+    command: docker build -t python-flask-api .
+    args:
+      chdir: /home/labuser/Desktop/python-flask-api
   - name: create container using simple image
-    command: docker run -d --name my-container -p 8085:8080 python-flask-api:{{tag}}
+    command: docker run -d --name my-container -p 8085:8080 python-flask-api
